@@ -1,0 +1,56 @@
+body{
+    background-color: lightgrey;
+}
+
+div{
+    text-align: center;
+}
+
+.white{
+    background-color: white;
+}
+
+.snake{
+    background-color: teal;
+}
+
+.pixel{
+    display: inline-block;
+    overflow: hidden;
+}
+
+#food{
+    background-color: green;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+#board{
+    width:0;
+    height:0;
+    line-height: 0;
+    margin:20px auto;
+}
+#score{
+    margin:5px auto;
+    font-family: Arial, sans-serif;
+    font-size: 24pt;
+    color: #FFFFFF;
+}
+
+.tail{
+    width: 100px;
+    height: 100px;
+    /*background: red;*/
+    border-radius: 00% 100% 100% 00% / 50% 50% 50% 50%;
+    /* up: 50% 50% 50% 50% / 00% 00% 100% 100%
+     * down: 50% 50% 50% 50% / 100% 100% 00% 00%
+     * left: 00% 100% 100% 00% / 50% 50% 50% 50%
+     * right: 100% 00% 00% 100% / 50% 50% 50% 50%
+     */
+}
+
+.circle{
+    border-radius:50%;
+    position: relative;
+}

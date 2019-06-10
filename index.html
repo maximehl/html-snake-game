@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div id="container">
+    <div id="score"><b>0 points</b></div>
+    <div id="board"></div>
+</div>
+
+<div>
+    <input type="range" min="10" max="24" value="12" title="Drag me to set the number of squares of the game!" step="1" oninput="updateRange(this.value)"><br>
+    Width: <span id="rangeVal">12</span> squares <br>
+    <button onclick="loadGame()">Start game!</button>
+</div>
+
+</body>
+</html>
