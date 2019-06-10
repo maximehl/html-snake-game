@@ -207,7 +207,11 @@ function addTail(direc, xCoord, yCoord){
     if(direc===1){
         fullBlock.css({"top": 0, "left":0/*-1*scale*/, "width":2*scale});
     }else if(direc===2){
-        fullBlock.css({"top": 0/*-1*scale*/, "left":0});
+        if(findPix(xCoord,yCoord).find(".circle").length>0){
+            fullBlock.css({"top": -2*scale, "left":0});
+        }else{
+            fullBlock.css({"top": 0/*-1*scale*/, "left":0});
+        }
     }else if(direc===3){
         fullBlock.css({"top": 0, "left":-1*scale, "width":2*scale});
     }else{
@@ -234,7 +238,11 @@ function addTail(direc, xCoord, yCoord){
     if(direc===1){
         $("#tail" + doubleCharNum(yCoord) + doubleCharNum(xCoord)).css("left", -2*scale);
     }else if(direc===2){
-        $("#tail" + doubleCharNum(yCoord) + doubleCharNum(xCoord)).css("top", -2*scale);
+        if(findPix(xCoord,yCoord).find(".circle").length>0){
+            $("#tail" + doubleCharNum(yCoord) + doubleCharNum(xCoord)).css("top", -4*scale);
+        }else{
+            $("#tail" + doubleCharNum(yCoord) + doubleCharNum(xCoord)).css("top", -2*scale);
+        }
     }else if(direc===3){
         $("#tail" + doubleCharNum(yCoord) + doubleCharNum(xCoord)).css("left", 1*scale);
     }else{
