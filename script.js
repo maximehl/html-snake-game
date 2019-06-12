@@ -10,7 +10,7 @@ var yChange = 0;
 var direc = 1;
 var keyPressQueue = [];
 var snakeCoords = [];
-var interval = 350;
+var interval = 250;
 var foodX;
 var foodY;
 var foodEl = $("<div id='food'></div>");
@@ -52,10 +52,10 @@ function loadGame(){
     direc = 1;
     keyPressQueue = [];
     snakeCoords = [];
-    interval = 350;
     boardEl.children().remove();
     $("#score").html("<b>0 points</b>");
     width = parseInt($("#rangeVal").html());
+    interval = 350-(width*4);
     scale = $(window).height()-106-47;
     //tagHere: check the window width as well
     boardEl.css({"width":scale, "height": scale});
@@ -358,10 +358,10 @@ function runGame(){
         //eats the food
         foodEl.remove();
         $("#score").html("<b>" + (snakeCoords.length-2) + " points</b>");
-        interval-=4;
+        interval-=3*width/(snakeCoords.length);
         foodX=Math.floor(Math.random()*width)+1;
         foodY=Math.floor(Math.random()*width)+1;
-        while(board[foodY][foodX]){
+        while(board[foodY][foodX]>0){
             foodX=Math.floor(Math.random()*width)+1;
             foodY=Math.floor(Math.random()*width)+1;
         }
