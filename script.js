@@ -438,6 +438,9 @@ function runGame(){
 }
 
 function oscillateFood(){
+    if(findPix(foodX,foodY).children().length===0){
+        findPix(foodX,foodY).append(foodEl);
+    }
     $("#food").css({"transition":"0.5s", "width":0.6*scale, "height":0.6*scale, "margin": 0.2*scale});
     setTimeout(function(){
         $("#food").css({"width":0.8*scale, "height":0.8*scale, "margin": 0.1*scale});
